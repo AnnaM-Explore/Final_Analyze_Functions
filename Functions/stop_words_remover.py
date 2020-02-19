@@ -31,11 +31,10 @@ def stop_words_remover(df):
         'him', 'could', 'front', 'within', 'â€˜re', 'back', 'such', 'already', 'several', 'side', 'whence', 'me', 
         'same', 'were', 'it', 'every', 'third', 'together'
     ]
-    }
-    
-    twitter_df = df
-    twitter_df['Without Stop Words'] = twitter_df['Tweets'].apply(str.lower)
-    twitter_df['Without Stop Words'] = twitter_df['Without Stop Words'].apply(str.split)
-    twitter_df['Without Stop Words'] = twitter_df['Without Stop Words'].apply(lambda stop_words: [word for word in stop_words if word not in stop_words_dict['stopwords']])       
-    
-    return twitter_df
+}
+
+    """This removes stopwords from  words and return the dataframe"""
+    df['Without Stop Words'] = df['Tweets'].apply(str.lower)
+    df['Without Stop Words'] = df['Without Stop Words'].apply(str.split)
+    df['Without Stop Words'] = df['Without Stop Words'].apply(lambda stop_words: [word for word in stop_words if word not in stop_words_dict['stopwords']])
+    return df
